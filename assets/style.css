@@ -2,7 +2,7 @@
   --bg: #f6f1e7; --panel: #fffaf0; --ink: #2a2420; --muted: #6b6158;
   --line: #e2d8c6; --accent: #8a3b12; --accent-ink: #fff; --lock: #efe6d6;
   --warn: #9a6a00; --radius: 10px;
-  font-family: "Noto Sans Thai", "Sarabun", system-ui, sans-serif;
+  font-family: "Chakra Petch", "Noto Sans Thai", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root { --bg: #17181c; --panel: #1f2126; --ink: #ebe6de; --muted: #a39b90;
