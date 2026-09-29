@@ -82,9 +82,9 @@
       var n = Number(actSel.value);
       fillAreas(n);
       if (n !== getProgress().act) areaSel.selectedIndex = 0;
-      apply({ act: n, area: areaSel.value });
+      change({ act: n, area: areaSel.value });
     });
-    areaSel.addEventListener("change", function () { apply({ act: Number(actSel.value), area: areaSel.value }); });
+    areaSel.addEventListener("change", function () { change({ act: Number(actSel.value), area: areaSel.value }); });
     box.appendChild(label); box.appendChild(actSel); box.appendChild(areaSel);
   }
 
@@ -165,6 +165,20 @@
   }
 
   function apply(p) { setProgress(p); renderPicker(p); renderGates(p); }
+
+  // เลื่อนความคืบหน้าไปข้างหน้า = เปิดเนื้อหาเพิ่ม → ต้องยืนยันก่อน (กันกดพลาดแล้วสปอยล์หลุด)
+  function ahead(n, cur) {
+    if (n.act !== cur.act) return n.act > cur.act;
+    return areaIndex(n.act, n.area) > areaIndex(cur.act, cur.area);
+  }
+  function change(n) {
+    var cur = getProgress();
+    if (ahead(n, cur) && !confirm("เลื่อนความคืบหน้าไปข้างหน้า เนื้อหาที่ซ่อนไว้จะถูกเปิด อาจมีสปอยล์ แน่ใจไหม?")) {
+      renderPicker(cur);   // ยกเลิก → คืนตัวเลือกเดิม
+      return;
+    }
+    apply(n);
+  }
 
   document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.classList.add("js");
