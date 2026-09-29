@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>คู่มือ DOS2 · ระบบเกม</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/areas.js"></script>
+<script src="assets/gate.js"></script>
+</head>
+<body>
+<header class="top"><div class="bar">
+  <a class="brand" href="index.html">คู่มือ DOS2</a>
+  <nav class="links"><a href="mechanics.html">ระบบเกม &amp; บิลด์</a><a href="act1.html">Act 1</a></nav>
+  <div id="progress"></div>
+</div></header>
+
+<main>
+<!-- สร้างโดย DOS2 scripts/export_site.py — อย่าแก้ไฟล์นี้ด้วยมือ -->
+<h1>ระบบเกม &amp; บิลด์</h1>
+<p class="meta">กลไกเกม ไม่มีเนื้อเรื่อง อ่านได้ทุกช่วงของเกม</p>
+<div class="card"><h2>สารบัญ</h2><ul><li><a href="#beginner-tips">ทิปผู้เล่นใหม่ (ระบบทั่วไป — ไม่มีเนื้อเรื่อง)</a></li><li><a href="#explorer-mode">ข้อควรรู้ความยาก Explorer (DE)</a></li><li><a href="#armor-control">เกราะ (Armor) กับการควบคุม (Crowd Control)</a></li><li><a href="#surfaces-elements">พื้นผิว (Surfaces) และธาตุ</a></li><li><a href="#source-points">Source Points (แต้ม Source)</a></li><li><a href="#thievery-sneak">การขโมย (Thievery) และการย่อง (Sneaking)</a></li><li><a href="#cheese-basics">cheese พื้นฐาน (S3 — ไม่นับเป็นสปอยล์)</a></li><li><a href="#ifan-build">พื้นฐานบิลด์ Ifan ben-Mezd</a></li></ul></div>
+<article class="mech" id="beginner-tips">
+<h2>ทิปผู้เล่นใหม่ (ระบบทั่วไป — ไม่มีเนื้อเรื่อง)</h2>
+<h3>สรุปสั้น</h3>
+<ul><li>
+<b>เซฟ:</b> quicksave F5 / quickload F8 · ใช้หลายช่องเซฟ (autosave ทับกันเอง) <span class="conf">กลาง</span>
+</li><li>
+<b>Alt ค้าง</b> = ไฮไลต์ของที่หยิบได้ · คลิกขวาที่ของ/คน = เมนูตัวเลือก <span class="conf">กลาง</span>
+</li><li>
+<b>Wits</b> ช่วยหากับดักและของซ่อน + เพิ่ม Initiative (ลำดับเทิร์น) <span class="conf">กลาง</span>
+</li><li>
+<b>Loremaster</b> + Identifying Glass ใช้ระบุไอเทม (ของยังไม่ระบุ = ค่าบางอย่างซ่อนอยู่) และดูข้อมูลศัตรู (ต้านทานอะไร) <span class="conf">กลาง</span>
+</li><li>
+<b>Pet Pal</b> (talent) คุยกับสัตว์ได้ → ได้ข้อมูล/เควสเพิ่ม · แหล่งไกด์ส่วนใหญ่แนะนำให้มีเสมอ <span class="conf">กลาง</span>
+</li><li>
+<b>Persuasion</b> (ทักษะพลเรือน) + ค่าสถานะที่บทสนทนาทดสอบ (เช่น Strength) → เปิดทางเลี่ยงการต่อสู้/ได้ข้อมูล <span class="conf">กลาง</span>
+</li><li>
+อุปกรณ์ตามเลเวลสำคัญมาก: เกราะ/อาวุธเลเวลต่ำกว่าเราหลายเลเวล = อ่อนลงชัดเจน → เปลี่ยนของบ่อย <span class="conf">กลาง</span>
+</li><li>
+Opportunity attack เกิดเฉพาะตัวที่มี talent <b>Opportunist</b> (อัศวินมีตั้งแต่เริ่ม) <span class="conf">ต่ำ</span>
+</li><li>
+ในการต่อสู้: ปุ่ม <b>Delay Turn</b> เลื่อนเทิร์นไปท้ายรอบ · <b>Flee</b> หนีการต่อสู้ได้ถ้าอยู่ห่างศัตรูพอ <span class="conf">ต่ำ</span>
+</li><li>
+ตายตัวเดียว (เล่นคนเดียว) = จบเกม → ใช้ Resurrection Scroll กับเพื่อนร่วมทีมเท่านั้น <span class="conf">ต่ำ</span>
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer</h3>
+<ul><li>
+อัศวินเกราะเวทต่ำ → จัดการศัตรูสายเวทก่อน ก่อนเขาทำลายเกราะเวทแล้วสตันเรา
+</li><li>
+เล่นคนเดียว: talent ตอนเลเวลอัพพิจารณา Lone Wolf + Pet Pal
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+ห้ามตีหรือขโมยจาก NPC ที่เป็นกลางถ้าไม่ได้เซฟ — NPC ที่ตายอาจเป็นคนให้เควส
+</li><li>
+เซฟก่อนเปิดบทสนทนาสำคัญ บทสนทนาอาจกลายเป็นการต่อสู้
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://techraptor.net/gaming/guides/beginners-guide-to-divinity-original-sin-ii">https://techraptor.net/gaming/guides/beginners-guide-to-divinity-original-sin-ii</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Pet_Pal">https://divinityoriginalsin2.wiki.fextralife.com/Pet_Pal</a> <span class="conf">กลาง</span></li><li><a href="https://earlyguides.com/divinity-original-sin-2/tips">https://earlyguides.com/divinity-original-sin-2/tips</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Controls">https://divinityoriginalsin2.wiki.fextralife.com/Controls</a> <span class="conf">กลาง</span></li></ul></div>
+</article>
+<article class="mech" id="explorer-mode">
+<h2>ข้อควรรู้ความยาก Explorer (DE)</h2>
+<h3>สรุปสั้น</h3>
+<ul><li>
+ผู้เล่นได้: เลือด +50% · ดาเมจ +50% · เกราะกายภาพ/เวท +30% · โอกาสโจมตีโดน +5% · หลบ +5% <span class="conf">กลาง</span>
+</li><li>
+NPC ศัตรูโดน: เลือด −20% · ดาเมจ −30% · เกราะกายภาพ/เวท −30% · โอกาสโจมตีโดน −15% <span class="conf">กลาง</span>
+</li><li>
+AI ศัตรูฉลาดน้อยลง ใช้พื้นผิวและคอมโบน้อยกว่า Classic
+</li><li>
+Story mode แรงกว่า Explorer อีกขั้น (เปลี่ยนความยากได้ในเมนูเกมระหว่างเล่น) <span class="conf">กลาง</span>
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer</h3>
+<ul><li>
+ยังตายได้ถ้าเข้าไปสู้กับศัตรูที่เลเวลสูงกว่ามาก → ดูเลเวลศัตรูก่อนเริ่มต่อสู้
+</li><li>
+ความยากต่ำเผื่อให้ลองวิธีแปลกๆ ได้ (ถัง พื้นผิว การย่องโจมตีก่อน)
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+ถ้าติดการต่อสู้จริงๆ เปลี่ยนเป็น Story ชั่วคราวได้ แล้วค่อยเปลี่ยนกลับ <span class="conf">ต่ำ</span>
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Difficulty_Modes">https://divinityoriginalsin2.wiki.fextralife.com/Difficulty_Modes</a> <span class="conf">กลาง</span></li><li><a href="https://gamerant.com/divinity-original-sin-2-difficulty-mode-differences/">https://gamerant.com/divinity-original-sin-2-difficulty-mode-differences/</a> <span class="conf">กลาง</span></li><li><a href="https://www.thegamer.com/divinity-original-sin-2-modes/">https://www.thegamer.com/divinity-original-sin-2-modes/</a> <span class="conf">กลาง</span></li></ul></div>
+</article>
+<article class="mech" id="armor-control">
+<h2>เกราะ (Armor) กับการควบคุม (Crowd Control)</h2>
+<h3>สรุปสั้น</h3>
+<ul><li>
+ทุกตัวมี 3 แถบ: <b>เกราะกายภาพ (Physical Armour)</b> สีเทา · <b>เกราะเวท (Magic Armour)</b> สีฟ้า · เลือด (Vitality) สีแดง
+</li><li>
+ดาเมจกายภาพต้องกินเกราะกายภาพให้หมดก่อน จึงเข้าเลือด · ดาเมจธาตุ/เวทกินเกราะเวทก่อน
+</li><li>
+<b>สถานะควบคุม (สตัน, แช่แข็ง, ล้ม, หลับ, กลัว ฯลฯ) ติดไม่ได้ถ้าเกราะประเภทเดียวกันยังเหลือแม้แต่ 1 แต้ม</b>
+<ul><li>
+สถานะจากสกิลกายภาพ (เช่น Knocked Down) → ต้องทำลายเกราะกายภาพก่อน
+</li><li>
+สถานะจากสกิลเวท (เช่น Stunned, Frozen) → ต้องทำลายเกราะเวทก่อน
+</li><li>
+สกิลที่ถูกเกราะกันยังทำดาเมจใส่เกราะตามปกติ แค่สถานะไม่ติด
+</li></ul>
+</li><li>
+ข้อยกเว้นที่รู้กัน: สถานะ Slowed มักติดได้แม้มีเกราะ <span class="conf">ต่ำ</span>
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer</h3>
+<ul><li>
+เลือก <b>ประเภทดาเมจเดียว</b> ต่อศัตรูหนึ่งตัว (เช่น ธนูกายภาพล้วน) แล้วค่อยใช้สกิลควบคุมประเภทเดียวกัน จะคุมได้เร็วกว่าตีปนสองแบบ
+</li><li>
+ดูแถบเกราะเหนือหัวศัตรูก่อนใช้สกิลควบคุม · ถ้าเกราะประเภทนั้นยังไม่หมด ใช้สกิลที่ทำดาเมจแรงแทน
+</li><li>
+ฝั่งเราก็เหมือนกัน: ถ้าเกราะเราหมด ศัตรูจะคุมเราได้ → ซ่อมเกราะ/ถอยก่อนเกราะหมด
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+ศัตรูที่เกราะกายภาพหนามักเกราะเวทต่ำ (และกลับกัน) → เปลี่ยนเป้าไปตีตัวที่ตรงกับดาเมจของเรา
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/armor-quotshieldquot-system">https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/armor-quotshieldquot-system</a> <span class="conf">สูง</span></li><li><a href="https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/status-effects">https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/status-effects</a> <span class="conf">สูง</span></li><li><a href="https://steamcommunity.com/app/435150/discussions/0/2792747297860162365/">https://steamcommunity.com/app/435150/discussions/0/2792747297860162365/</a> <span class="conf">ต่ำ</span></li></ul></div>
+</article>
+<article class="mech" id="surfaces-elements">
+<h2>พื้นผิว (Surfaces) และธาตุ</h2>
+<h3>สรุปสั้น</h3>
+<ul><li>
+สกิล/ระเบิด/ถังทำให้เกิดพื้นผิวบนพื้น (หรือเป็นเมฆในอากาศ) แล้วพื้นผิวทำปฏิกิริยากับธาตุ
+</li><li>
+คอมโบพื้นฐาน:
+<ul><li>
+<b>น้ำมัน (Oil)</b> + ไฟ → ไฟลุก · น้ำมันเฉยๆ ทำให้ช้า (Slowed)
+</li><li>
+<b>พิษ (Poison)</b> + ไฟ → ระเบิด/ไฟลุก
+</li><li>
+<b>น้ำ (Water)</b> + สายฟ้า → น้ำช็อต (Electrified) ติดสตัน · น้ำ + น้ำแข็ง → พื้นน้ำแข็งลื่น (ล้ม)
+</li><li>
+<b>เลือด (Blood)</b> แช่แข็งหรือช็อตได้เหมือนน้ำ
+</li><li>
+<b>น้ำ/ฝน</b> ดับไฟได้ · ไฟ + น้ำ → ไอน้ำ (เมฆ) บังการมองเห็น · ไอน้ำ + สายฟ้า → เมฆช็อต
+</li></ul>
+</li><li>
+<b>Bless</b> เปลี่ยนพื้นผิวให้เป็นผลดี · <b>Curse</b> เปลี่ยนเป็นผลร้ายล้วน (เช่น พิษต้องสาปทำลายเกราะกายภาพ) <span class="conf">กลาง</span>
+</li><li>
+ลำดับมีผล: พื้นผิวที่ค้างอยู่ (น้ำ) ถูกธาตุที่มาทีหลัง (สายฟ้า) เปลี่ยนได้ · แต่ถ้าปล่อยสายฟ้าก่อนแล้วค่อยเทน้ำ มักไม่ช็อต <span class="conf">กลาง</span>
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer (สายอัศวิน)</h3>
+<ul><li>
+อัศวินต้องเข้าไปยืนชิดศัตรู → <b>ดูพื้นก่อนเดิน/พุ่ง</b> Battering Ram วิ่งเป็นเส้นตรง ถ้าทางผ่านมีไฟ/พิษ/น้ำมัน ตัวเองจะโดนผลนั้นด้วย <span class="conf">กลาง</span>
+</li><li>
+อย่ายืนตีในน้ำ/เลือดถ้าศัตรูมีสายฟ้า (ช็อตติดสตันทั้งเรา) · อย่ายืนบนน้ำมันถ้าศัตรูมีไฟ
+</li><li>
+อัศวินลง Strength สูง → ย้ายของหนักได้มากขึ้น เช่น ถังน้ำมัน/พิษ/น้ำ (~60 กก.) ไปวางใต้กลุ่มศัตรูก่อนเปิดฉาก <span class="conf">กลาง</span>
+</li><li>
+ใช้ธาตุจากของ (ถัง, ระเบิดมือ, ม้วนคาถา) แทนสกิลเวท เพราะอัศวินตั้งต้นไม่มีสกิลธาตุ
+</li><li>
+(อ้างอิงสายธนู: Elemental Ranger ได้โบนัสจากพื้นผิวใต้เป้าหมาย — ดู <a href="#ifan-build">พื้นฐานบิลด์ Ifan ben-Mezd</a>)
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+ยิงหรือโยนถังใส่กลุ่มศัตรูก่อนเริ่มการต่อสู้ แล้วจุดไฟ = เปิดฉากได้เปรียบ
+</li><li>
+เก็บ/ย้ายถังที่อันตรายออกจากทางเดินของทีมก่อนสู้ (ดู <a href="#cheese-basics">cheese พื้นฐาน (S3 — ไม่นับเป็นสปอยล์)</a>)
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://www.gamepressure.com/originalsinii/environmental-effects-and-combinations/zea274">https://www.gamepressure.com/originalsinii/environmental-effects-and-combinations/zea274</a> <span class="conf">สูง</span></li><li><a href="https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/environmental-effects-fields">https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/environmental-effects-fields</a> <span class="conf">สูง</span></li><li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1171813230">https://steamcommunity.com/sharedfiles/filedetails/?id=1171813230</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Attributes">https://divinityoriginalsin2.wiki.fextralife.com/Attributes</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Battering_Ram">https://divinityoriginalsin2.wiki.fextralife.com/Battering_Ram</a> <span class="conf">กลาง</span></li></ul></div>
+</article>
+<article class="mech" id="source-points">
+<h2>Source Points (แต้ม Source)</h2>
+<h3>สรุปสั้น</h3>
+<ul><li>
+<b>Source Points</b> = ทรัพยากรพิเศษที่ใช้กับ <b>สกิล Source</b> (สกิลแรงมาก) ใช้ 1 ครั้งเสีย Source Point ตามที่สกิลกำหนด
+</li><li>
+เก็บได้สูงสุด <b>3 แต้ม</b> · ช่องเก็บแต้มปลดล็อกตามเนื้อเรื่อง (ไม่ระบุว่าที่ไหน/เมื่อไร — S1)
+</li><li>
+Source Point <b>ไม่ฟื้นเองเมื่อพัก</b> ต้องเติม ช่องทางเชิงกลไกที่รู้กัน:
+<ul><li>
+ยืนบนพื้นผิว <b>Source</b> (ต้องมีช่องว่าง) → ดูดเป็นแต้ม
+</li><li>
+สกิล <b>Source Vampirism</b> ดูดจากเป้าหมายที่มี Source
+</li><li>
+ดูดวิญญาณจาก <b>Soul Jar</b>
+</li><li>
+น้ำพุ Source (เติมซ้ำได้) — มีเฉพาะบางจุดในเกม
+</li></ul>
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer</h3>
+<ul><li>
+สกิลประจำตัวของ Ifan (Summon Ifan's Soul Wolf) เป็นสกิล Source → ต้องมีแต้มถึงจะใช้ได้ <span class="conf">กลาง</span>
+</li><li>
+เก็บแต้มไว้ใช้กับการต่อสู้ยาก ไม่ต้องใช้ทุกการต่อสู้
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+ถ้ามีจุดเติมที่ใช้ซ้ำได้ ให้ใช้แต้มให้หมดก่อนแวะเติม
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Source_Points">https://divinityoriginalsin2.wiki.fextralife.com/Source_Points</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Source_Skills">https://divinityoriginalsin2.wiki.fextralife.com/Source_Skills</a> <span class="conf">กลาง</span></li></ul></div>
+</article>
+<article class="mech" id="thievery-sneak">
+<h2>การขโมย (Thievery) และการย่อง (Sneaking)</h2>
+<h3>สรุปสั้น</h3>
+<ul><li>
+<b>ล้วงกระเป๋า:</b> ต้องมี Thievery ≥ 1 → เข้าโหมดย่อง → คลิกที่ NPC
+<ul><li>
+มี <b>เพดานน้ำหนัก/เงิน</b> ที่ขโมยได้ต่อครั้ง (มีตัวบอกในหน้าต่าง) เกินเพดาน = ถูกจับ · เพดานเพิ่มตามแต้ม Thievery
+</li></ul>
+</li><li>
+<b>ของมีเจ้าของ:</b> ไอคอนมือสีแดง = หยิบแล้วนับเป็นการขโมย
+</li><li>
+<b>กรวยสายตา (sight cone)</b> ของ NPC: ทำผิดในกรวย = ถูกเห็น · ย่องแล้วไม่เข้ากรวย = ไม่ถูกเห็น
+</li><li>
+<b>ถูกจับ:</b> NPC จะตามหา ถ้าออกห่างพอเขาจะเลิกตามหา · ถ้าโดนจับได้ ความสัมพันธ์ (attitude) ลดลง อาจถูกเรียกเงิน หรือเกิดการต่อสู้ที่ดึงคนรอบข้างเข้ามาด้วย
+</li><li>
+<b>ย่องในการต่อสู้:</b> ใช้ 4 AP (Guerrilla ลดเหลือ 3 AP ใน DE) ยกเลิกฟรี · ขณะย่องเดินช้าลง 30% <span class="conf">กลาง</span>
+</li><li>
+<b>Chameleon Cloak:</b> ทำให้ล่องหน (Invisible) 2 เทิร์นใน DE <span class="conf">กลาง</span>
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer</h3>
+<ul><li>
+ถ้าเล่นทีมเดียว/ทีมเล็ก: ให้ตัวที่ขโมยมี Thievery แล้วใช้ตัวอื่นคุยกับเป้าหมาย
+</li><li>
+ขโมยแล้วเดินออกห่างจากเจ้าของทันทีก่อนเขาเริ่มตามหา
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+<b>ตรึงด้วยบทสนทนา:</b> ให้ตัวละครหนึ่งคุยกับ NPC ไว้ ระหว่างนั้น NPC และกรวยสายตาของเขาจะไม่ขยับ แล้วสลับไปใช้อีกตัวย่องขโมย (ถ้าเล่นตัวเดียวทำไม่ได้)
+</li><li>
+เซฟก่อนขโมยทุกครั้ง
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Thievery">https://divinityoriginalsin2.wiki.fextralife.com/Thievery</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Sneaking">https://divinityoriginalsin2.wiki.fextralife.com/Sneaking</a> <span class="conf">กลาง</span></li><li><a href="https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/stealth">https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75293/stealth</a> <span class="conf">สูง</span></li><li><a href="https://www.magicgameworld.com/divinity-original-sin-2-beginners-guide-to-pickpocketing/">https://www.magicgameworld.com/divinity-original-sin-2-beginners-guide-to-pickpocketing/</a> <span class="conf">กลาง</span></li><li><a href="https://steamcommunity.com/app/435150/discussions/0/5311389137861364046/">https://steamcommunity.com/app/435150/discussions/0/5311389137861364046/</a> <span class="conf">ต่ำ</span></li></ul></div>
+</article>
+<article class="mech" id="cheese-basics">
+<h2>cheese พื้นฐาน (S3 — ไม่นับเป็นสปอยล์)</h2>
+<h3>สรุปสั้น</h3>
+<ul><li>
+<b>Bedroll (ถุงนอน):</b> กดใช้แล้วฮีลทั้งทีมเต็ม ใช้ซ้ำได้ นอกการต่อสู้ → ไม่ต้องเปลืองยา
+</li><li>
+<b>ถัง:</b> ย้าย/ทำลายถังน้ำมันหรือถังระเบิดที่อยู่ใกล้ทีมก่อนสู้ · ย้ายถังไปวางใกล้ศัตรูแล้วจุดตอนเปิดฉาก
+</li><li>
+<b>หัวลูกศร:</b> จุ่มลูกศร/หัวลูกศรกับถังธาตุ (ไฟ น้ำมัน พิษ) เพื่อทำลูกศรธาตุ <span class="conf">กลาง</span>
+</li><li>
+<b>Teleportation (สกิล):</b> ย้ายศัตรูไปจุดที่เสียเปรียบ (ตกที่สูง ลงพื้นผิวอันตราย) หรือย้ายของ
+</li><li>
+<b>Telekinesis (ทักษะ):</b> ยกของหนักจากระยะไกล โยนใส่ศัตรูหรือย้ายถัง
+</li><li>
+<b>เปิดฉากก่อน:</b> ย่องเข้าใกล้ จัดตำแหน่งทีม แล้วเริ่มการต่อสู้ด้วยการโจมตีแรงที่สุด
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer (สายอัศวิน)</h3>
+<ul><li>
+Strength สูง = ลากถังหนักได้เอง → ย้ายถังไปใกล้ศัตรูก่อนเริ่มสู้ แล้วโยนของ/ระเบิดมือใส่เพื่อจุด <span class="conf">กลาง</span>
+</li><li>
+เปิดฉากด้วย Battering Ram / Battle Stomp ใส่ศัตรูที่เกราะกายภาพหมดแล้วเท่านั้น (ไม่งั้นไม่ล้ม) — ดู <a href="#armor-control">เกราะ (Armor) กับการควบคุม (Crowd Control)</a>
+</li><li>
+ย่องเข้าไปยืนชิดศัตรูก่อนเริ่มการต่อสู้ → เทิร์นแรกตีได้เลยไม่ต้องเสีย AP เดิน
+</li><li>
+ติดธนูสำรองไว้ยิงถังจากระยะไกลได้ (ดาเมจต่ำแต่พอจุดถัง) <span class="conf">ต่ำ</span>
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+เซฟด่วน (quicksave) ก่อนทุกการต่อสู้และทุกบทสนทนาสำคัญ
+</li><li>
+คำถาม cheese เฉพาะฉาก → เขียนลงเช็คลิสต์ของฉากนั้น ไม่ใช่ไฟล์นี้ (S5)
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://www.gamespot.com/gallery/divinity-original-sin-2-expert-guide-advanced-tips/2900-1500/">https://www.gamespot.com/gallery/divinity-original-sin-2-expert-guide-advanced-tips/2900-1500/</a> <span class="conf">กลาง</span></li><li><a href="https://kotaku.com/tips-for-playing-divinity-original-sin-2-1819010276">https://kotaku.com/tips-for-playing-divinity-original-sin-2-1819010276</a> <span class="conf">กลาง</span></li><li><a href="https://kotaku.com/divinity-original-sin-2-players-are-finding-all-kinds-1818978159">https://kotaku.com/divinity-original-sin-2-players-are-finding-all-kinds-1818978159</a> <span class="conf">กลาง</span></li><li><a href="https://steamcommunity.com/app/435150/discussions/0/3223871682616982341">https://steamcommunity.com/app/435150/discussions/0/3223871682616982341</a> <span class="conf">ต่ำ</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Attributes">https://divinityoriginalsin2.wiki.fextralife.com/Attributes</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Telekinesis">https://divinityoriginalsin2.wiki.fextralife.com/Telekinesis</a> <span class="conf">กลาง</span></li></ul></div>
+</article>
+<article class="mech" id="ifan-build">
+<h2>พื้นฐานบิลด์ Ifan ben-Mezd</h2>
+<h3>สายอัศวิน (Knight)</h3>
+<ul><li>
+คลาสตั้งต้น: ทักษะ <b>Warfare</b> + <b>Two-Handed</b> · ค่าสถานะหลัก Strength (+ Constitution) · อาวุธสองมือ (ดาบ/ขวาน/ค้อน) <span class="conf">กลาง</span>
+</li><li>
+สกิลเริ่มต้น (DE): <b>Battle Stomp</b> (กระแทกพื้น ทำให้ศัตรูด้านหน้าล้ม) · <b>Battering Ram</b> (พุ่งชน ทำให้ล้มตามทาง) · <b>Crippling Blow</b> (ตรึงศัตรูไม่ให้เดิน) · Talent <b>Opportunist</b> (ตีศัตรูที่เดินผ่านใกล้ๆ) <span class="conf">กลาง</span>
+</li><li>
+ทุกอย่างเป็นดาเมจ <b>กายภาพ</b> → ตีเกราะเทาให้หมดก่อน แล้วค่อยใช้ Battle Stomp / Battering Ram ให้ล้ม (ดู <a href="#armor-control">เกราะ (Armor) กับการควบคุม (Crowd Control)</a>)
+</li><li>
+ทักษะที่นิยมลง: <b>Warfare</b> (เพิ่มดาเมจกายภาพทุกอย่าง) ก่อน → <b>Two-Handed</b> (คริแรงขึ้น) → เสริม Scoundrel / Necromancer (ดูดเลือด) / Polymorph · ค่าสถานะ: Strength หลัก + Memory พอใส่สกิล <span class="conf">กลาง</span>
+</li><li>
+สายประชิดอ่อนเรื่องถูกคุมตอนเกราะหมด → เก็บสกิลที่เติมเกราะ/ถอยไว้บ้าง <span class="conf">กลาง</span>
+</li><li>
+Soul Wolf (สกิล Source ประจำตัว Ifan) ยังใช้ได้เป็นตัวรับหน้าช่วย แม้ไม่ลง Summoning <span class="conf">ต่ำ</span>
+</li><li>
+Lone Wolf เข้ากับสายนี้มาก (AP เพิ่ม = ตีได้หลายครั้ง/ใช้สกิลได้ต่อเนื่อง) ถ้าเล่นไม่เกิน 2 คน
+</li></ul>
+<h3>สายนักธนู + อัญเชิญ</h3>
+<ul><li>
+แนวที่นิยม: <b>นักธนู (Ranger) + อัญเชิญ (Summoner)</b> — ยิงจากระยะไกล ส่งสัตว์อัญเชิญไปรับหน้า
+</li><li>
+สกิลประจำตัว <b>Summon Ifan's Soul Wolf</b> เป็นสกิล Source (ดู <a href="#source-points">Source Points (แต้ม Source)</a>) และแรงขึ้นตามทักษะ Summoning
+</li><li>
+ทักษะหลักที่แนะนำ: <b>Huntsman</b> (ธนู) · <b>Summoning</b> · อาจเสริม Scoundrel / Necromancer / Warfare ภายหลัง
+</li><li>
+ค่าสถานะหลัก: Finesse (ดาเมจธนู) · Wits (คริ/ความเร็ว) · Memory พอให้ใส่สกิลที่ใช้
+</li></ul>
+<h3>Talent ที่ควรรู้</h3>
+<ul><li>
+<b>Elemental Ranger:</b> การโจมตีปกติด้วยธนูได้ดาเมจธาตุเพิ่ม ~20% ตามพื้นผิวที่ <b>เป้าหมาย</b> ยืนอยู่ (ไม่รวมสกิลและลูกศรพิเศษ) <span class="conf">กลาง</span>
+</li><li>
+<b>Arrow Recovery:</b> มีโอกาสได้ลูกศรพิเศษคืน <span class="conf">กลาง</span>
+</li><li>
+<b>Lone Wolf</b> (ถ้าเล่นตัวเดียวหรือสองคน): +2 AP สูงสุด, +2 AP ฟื้นต่อเทิร์น, เลือด +30%, เกราะจากอุปกรณ์ +30%, แต้มค่าสถานะ/ทักษะที่ลงคูณสอง (DE มีเพดาน attribute 40 / ทักษะ 10) · ถ้าในทีมมีเกิน 2 คน talent นี้จะไม่ทำงาน <span class="conf">กลาง</span>
+</li></ul>
+<h3>ใช้ยังไงกับ Ifan / Explorer</h3>
+<ul><li>
+หาที่สูงก่อนยิง → ได้ระยะและดาเมจเพิ่ม <span class="conf">ต่ำ</span>
+</li><li>
+ใช้คู่กับพื้นผิว: ใช้สกิลที่สร้างพื้นผิวใต้ศัตรูก่อน แล้วค่อยยิงธนู (Elemental Ranger)
+</li><li>
+ตีเกราะกายภาพให้หมดด้วยธนูก่อน แล้วค่อยใช้สกิลควบคุมกายภาพ (ดู <a href="#armor-control">เกราะ (Armor) กับการควบคุม (Crowd Control)</a>)
+</li></ul>
+<h3>ทริค / cheese</h3>
+<ul><li>
+ส่งสัตว์อัญเชิญเข้าไปเป็นตัวล่อก่อน ส่วน Ifan ยืนยิงอยู่ห่างๆ
+</li></ul>
+<div class="sources"><b>แหล่งที่มา</b><ul><li><a href="https://gamerant.com/divinity-original-sin-2-ifan-best-builds/">https://gamerant.com/divinity-original-sin-2-ifan-best-builds/</a> <span class="conf">กลาง</span></li><li><a href="https://fextralife.com/divinity-original-sin-2-builds-ranger/">https://fextralife.com/divinity-original-sin-2-builds-ranger/</a> <span class="conf">กลาง</span></li><li><a href="https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75285/the-ranger-origin-ifan-avatar">https://gamefaqs.gamespot.com/pc/179840-divinity-original-sin-ii/faqs/75285/the-ranger-origin-ifan-avatar</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Elemental_Ranger">https://divinityoriginalsin2.wiki.fextralife.com/Elemental_Ranger</a> <span class="conf">กลาง</span></li><li><a href="https://dos2.wiki/wiki/Lone_Wolf">https://dos2.wiki/wiki/Lone_Wolf</a> <span class="conf">กลาง</span></li><li><a href="https://divinityoriginalsin2.wiki.fextralife.com/Knight">https://divinityoriginalsin2.wiki.fextralife.com/Knight</a> <span class="conf">กลาง</span></li><li><a href="https://screenrant.com/divinity-original-sin-knight-class-guide-tips-tricks/">https://screenrant.com/divinity-original-sin-knight-class-guide-tips-tricks/</a> <span class="conf">กลาง</span></li><li><a href="https://fextralife.com/divinity-original-sin-2-definitive-edition-the-sourcerors-guide-to-lone-wolf/">https://fextralife.com/divinity-original-sin-2-definitive-edition-the-sourcerors-guide-to-lone-wolf/</a> <span class="conf">กลาง</span></li></ul></div>
+</article>
+</main>
+<footer>คู่มือแฟนเมด ไม่เกี่ยวข้องกับ Larian Studios · Divinity: Original Sin 2 เป็นเครื่องหมายการค้าของเจ้าของ</footer>
+</body>
+</html>
