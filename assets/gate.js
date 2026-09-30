@@ -30,7 +30,12 @@
   function getProgress() {
     try {
       var p = JSON.parse(load(KEY_PROGRESS));
-      if (p && typeof p.act === "number" && actOf(p.act) && typeof p.area === "string") return p;
+      if (p && typeof p.act === "number" && actOf(p.act) && typeof p.area === "string") {
+        var a = actOf(p.act);
+        if (p.area === ALL || areaIndex(p.act, p.area) !== UNKNOWN) return p;
+        // id ที่ไม่มีในรายการ (ถูกเปลี่ยนชื่อ/พิมพ์ผิด) ห้ามตีความว่า "ผ่านหมด" → ถอยไปพื้นที่แรกของ Act (fail-closed)
+        return a.areas.length ? { act: p.act, area: a.areas[0].id } : first;
+      }
     } catch (e) {}
     return first;
   }
@@ -127,12 +132,16 @@
   // ---------- ป้าย ⚠️สปอยล์ (ซ่อนเสมอ) ----------
   function renderSpoilers() {
     Array.prototype.forEach.call(document.querySelectorAll(".spoiler"), function (el) {
-      if (el.querySelector(":scope > .sbtn")) return;
+      if (el.classList.contains("ready")) return;
+      var body = document.createElement("div");
+      body.className = "sbody";
+      while (el.firstChild) body.appendChild(el.firstChild);   // รวมข้อความที่วางตรงๆ (CSS ซ่อน text node เองไม่ได้)
       var btn = document.createElement("button");
       btn.type = "button"; btn.className = "sbtn";
       btn.textContent = "⚠️สปอยล์ — กดเพื่อเปิด/ปิด";
       btn.addEventListener("click", function () { el.classList.toggle("open"); });
-      el.insertBefore(btn, el.firstChild);
+      el.appendChild(btn); el.appendChild(body);
+      el.classList.add("ready");
     });
   }
 

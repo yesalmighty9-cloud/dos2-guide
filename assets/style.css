@@ -47,10 +47,11 @@ html.js [data-act]:not(.locked) > .gbody, [data-act].peek > .gbody { display: bl
 [data-act].peek > .glock { opacity: .7; }
 noscript p { background: var(--lock); padding: 8px 12px; border-radius: 8px; }
 
-/* สปอยล์: ซ่อนเสมอ */
+/* สปอยล์: ซ่อนเสมอ · ก่อน JS ห่อเนื้อหาเข้า .sbody ซ่อนทั้งกล่อง (ข้อความที่วางตรงๆ ในกล่องก็ไม่หลุด) */
 .spoiler { border: 1px dashed var(--warn); border-radius: 8px; padding: 6px 12px; margin: 10px 0; }
-.spoiler > :not(.sbtn) { display: none; }
-.spoiler.open > :not(.sbtn) { display: block; }
+.spoiler:not(.ready) { display: none; }
+.spoiler > .sbody { display: none; }
+.spoiler.open > .sbody { display: block; }
 .sbtn { color: var(--warn); border-color: var(--warn); }
 
 /* เช็คลิสต์ */
