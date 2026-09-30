@@ -7,8 +7,11 @@ window.DOS2_ACTS = [
   { act: 1, name: "Act 1", areas: [
     { id: "fort-joy-beach", name: "ชายหาด Fort Joy (Fort Joy Beach)" },
     { id: "fort-joy", name: "Fort Joy" },
+    { id: "fort-joy-prison", name: "Fort Joy Prison" },
     { id: "hollow-marshes", name: "The Hollow Marshes" },
     { id: "sanctuary-of-amadia", name: "Sanctuary of Amadia" },
+    { id: "vault-of-braccus-rex", name: "The Vault of Braccus Rex" },
+    { id: "gargoyles-maze", name: "The Gargoyle's Maze" },
   ]},
   { act: 2, name: "Act 2", areas: [] },
   { act: 3, name: "Act 3", areas: [] },
