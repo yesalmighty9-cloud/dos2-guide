@@ -17,7 +17,11 @@ window.DOS2_ACTS = [
   { act: 2, name: "Act 2", areas: [
     { id: "driftwood", name: "Driftwood" },
     { id: "stonegarden", name: "Stonegarden" },
+    { id: "the-meadows", name: "The Meadows" },
     { id: "wreckers-cave", name: "Wreckers' Cave" },
+    { id: "cloisterwood", name: "Cloisterwood" },
+    { id: "blackpits", name: "Blackpits" },
+    { id: "bloodmoon-island", name: "Bloodmoon Island" },
   ]},
   { act: 3, name: "Act 3", areas: [] },
   { act: 4, name: "Act 4", areas: [] },
