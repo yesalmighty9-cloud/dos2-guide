@@ -8,6 +8,7 @@ window.DOS2_ACTS = [
     { id: "fort-joy-beach", name: "ชายหาด Fort Joy (Fort Joy Beach)" },
     { id: "fort-joy", name: "Fort Joy" },
     { id: "hollow-marshes", name: "The Hollow Marshes" },
+    { id: "sanctuary-of-amadia", name: "Sanctuary of Amadia" },
   ]},
   { act: 2, name: "Act 2", areas: [] },
   { act: 3, name: "Act 3", areas: [] },
