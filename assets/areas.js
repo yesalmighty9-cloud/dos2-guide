@@ -12,6 +12,7 @@ window.DOS2_ACTS = [
     { id: "sanctuary-of-amadia", name: "Sanctuary of Amadia" },
     { id: "vault-of-braccus-rex", name: "The Vault of Braccus Rex" },
     { id: "gargoyles-maze", name: "The Gargoyle's Maze" },
+    { id: "braccus-rex-tower", name: "Braccus Rex's Tower" },
   ]},
   { act: 2, name: "Act 2", areas: [] },
   { act: 3, name: "Act 3", areas: [] },
