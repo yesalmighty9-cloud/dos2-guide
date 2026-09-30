@@ -14,7 +14,11 @@ window.DOS2_ACTS = [
     { id: "gargoyles-maze", name: "The Gargoyle's Maze" },
     { id: "braccus-rex-tower", name: "Braccus Rex's Tower" },
   ]},
-  { act: 2, name: "Act 2", areas: [] },
+  { act: 2, name: "Act 2", areas: [
+    { id: "driftwood", name: "Driftwood" },
+    { id: "stonegarden", name: "Stonegarden" },
+    { id: "wreckers-cave", name: "Wreckers' Cave" },
+  ]},
   { act: 3, name: "Act 3", areas: [] },
   { act: 4, name: "Act 4", areas: [] },
 ];
